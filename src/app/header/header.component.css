@@ -1,0 +1,10 @@
+.navbar {
+  background-color: black;
+}
+.navbar-brand img {
+  height: 550px;
+  width: 550px;
+}
+.navbar .nav-link {
+  color: aliceblue;
+}

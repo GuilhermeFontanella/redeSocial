@@ -1,0 +1,21 @@
+<div class="login container">
+    <mat-card class="login-card">
+        <mat-card-title>
+            <span>Login</span>
+        </mat-card-title>
+        <mat-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                </div>
+                <div class="mb-3">
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                </div>
+                <a class="linkCadastro" (click)="cadastro()" title="Ir para a página de cadastro">Não tenho cadastro</a>
+                <a class="linkCadastro" routerLink="recuparar-senha" title="Recuperar a senha">Esqueci a senha</a>
+                <button matRipple type="submit" class="btn btn-primary" title="Entrar">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+

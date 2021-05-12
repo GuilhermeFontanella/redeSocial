@@ -1,0 +1,50 @@
+<div class="card-cadastro container">
+    <mat-card class="cadastro-card">
+        <div class="cadastro-title">
+            <span>Cadastro</span>
+        </div>
+        <div *ngIf="cadastro">
+            <form autocomplete="off" novalidate [formGroup]="cadastro" (ngOnsubmit)="onSubmit()">
+                <mat-card-content>
+                    <app-form-text nome="Nome" controlName="nome" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>    
+                <mat-card-content>
+                    <app-form-text nome="Sobrenome" controlName="sobrenome" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>
+                <mat-card-content>
+                    <app-form-text nome="Gênero" controlName="genero" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>
+                <mat-card-content>
+                    <app-form-text nome="Data de nascimento" controlName="dataNascimento" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>
+                <mat-card-content>
+                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>
+                <mat-card-content>
+                    <app-form-text nome="Senha" controlName="senha" [formGroup]="cadastro"></app-form-text>
+                </mat-card-content>
+                <button 
+                type="submit" 
+                class="btn btn-primary"
+                title="Cadastrar usuário"
+                matRipple
+                (click)="onSubmit()"
+                >Cadastrar
+                </button>
+                <button 
+                type="button" 
+                class="btn btn-primary" 
+                routerLink="/login"
+                title="Voltar para o login"
+                matRipple
+                >
+                Voltar
+                </button>
+            </form>  
+        </div> 
+    </mat-card>  
+</div>
+
+    
+
+

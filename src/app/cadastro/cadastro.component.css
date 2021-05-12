@@ -1,0 +1,46 @@
+.card-cadastro {
+    padding-bottom: 100px
+}
+.cadastro-card {
+    background-color: greenyellow;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: end;
+    box-shadow: 0px 15px 20px rgb(1, 51, 5);
+    width: 800px;
+    left: 150px;
+    right: 150px;
+}
+form input, ::placeholder {
+    background-color: black;
+    border: none;
+    color: azure;
+    max-width: 800px;
+    margin: auto;
+}
+.cadastro-title {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: end;
+}
+input:first-child {
+    margin-top: 0px;
+}
+mat-form-field {
+    display: block;
+}
+button {
+    margin-right: 30px;
+    background-color: black;
+    color: azure;
+    border: none;
+}
+button:last-child {
+    margin-right: 0px;
+}
+
+
+
