@@ -4,7 +4,7 @@
             <span>Cadastro</span>
         </div>
         <div *ngIf="cadastro">
-            <form autocomplete="off" novalidate [formGroup]="cadastro" (ngOnsubmit)="onSubmit()">
+            <form autocomplete="off" novalidate [formGroup]="cadastro">
                 <mat-card-content>
                     <app-form-text nome="Nome" controlName="nome" [formGroup]="cadastro"></app-form-text>
                 </mat-card-content>    
@@ -18,17 +18,17 @@
                     <app-form-text nome="Data de nascimento" controlName="dataNascimento" [formGroup]="cadastro"></app-form-text>
                 </mat-card-content>
                 <mat-card-content>
-                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro"></app-form-text>
+                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro" name="usario.email"></app-form-text>
                 </mat-card-content>
                 <mat-card-content>
-                    <app-form-text nome="Senha" controlName="senha" [formGroup]="cadastro"></app-form-text>
+                    <app-form-text nome="Senha" controlName="senha" [formGroup]="cadastro" name="usario.senha"></app-form-text>
                 </mat-card-content>
                 <button 
                 type="submit" 
                 class="btn btn-primary"
                 title="Cadastrar usuário"
                 matRipple
-                (click)="onSubmit()"
+                (click)="realizarCadastro()"
                 >Cadastrar
                 </button>
                 <button 

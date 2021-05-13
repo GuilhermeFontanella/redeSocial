@@ -22,7 +22,7 @@ const routes: Routes = [
     component: CadastroComponent 
   },
   { 
-    path: '', 
+    path: 'loja', 
     component: LojaComponent 
   },
   { 

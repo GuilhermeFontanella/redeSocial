@@ -3,7 +3,8 @@ export class Usuario {
     sobrenome: string = '';
     dataNascimento: string = '';
     genero: string = '';
-    login!: Login
+    email: string = '';
+    senha: string = '';
 }
 
 export class Login {

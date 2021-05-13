@@ -31,6 +31,7 @@ import {MatInputModule} from '@angular/material/input';
 import { LojaComponent } from './loja/loja.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import { FormTextComponent } from './shared/form-text/form-text.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { FormTextComponent } from './shared/form-text/form-text.component';
     MatRippleModule,
     MatSelectModule,  
     A11yModule,
-    MatInputModule  
+    MatInputModule,
+    MatSnackBarModule 
   ],
   providers: [
     MatDatepickerModule,

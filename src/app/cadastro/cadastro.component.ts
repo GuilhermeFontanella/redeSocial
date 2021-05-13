@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidarCamposService } from '../shared/validar-campos.service';
-import { Usuario } from '../models/usuario.model';
+import { Login, Usuario } from '../models/usuario.model';
+import { CadastroService } from '../services/cadastro.service';
+import { Route } from '@angular/compiler/src/core';
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,31 +14,52 @@ import { Usuario } from '../models/usuario.model';
 })
 export class CadastroComponent implements OnInit {
 
+  usuario: Usuario = {
+    nome: '',
+    sobrenome: '',
+    dataNascimento: '',
+    genero: '',
+    email: '',
+    senha: ''
+  }
+
   cadastro!: FormGroup;
 
   matDatepicker = '';
 
   constructor(
-    private validacao: ValidarCamposService,
     private formBuilder: FormBuilder,
+    private cadastroService: CadastroService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
 
     this.cadastro = this.formBuilder.group({
-        nome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
-        sobrenome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
-        dataNascimento: ['', Validators.required],
-        genero: ['', Validators.required],
-        email: ['', Validators.required, Validators.email],
-        senha: ['', Validators.required, Validators.minLength(6), Validators.maxLength(15)]          
+      nome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
+      sobrenome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
+      dataNascimento: ['', Validators.required],
+      genero: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
+      senha: ['', Validators.required, Validators.minLength(6), Validators.maxLength(15)]          
     })    
   }
 
   onSubmit() {
     console.log(this.cadastro.value);
+    this.realizarCadastro();
   }
 
+  realizarCadastro(): void {
+    this.cadastroService.realizarCadastro(this.usuario).subscribe(() => {
+      this.cadastroService.showMessage("Usuário cadastrado com sucesso!")
+      this.router.navigate(['/login'])
+      }, erro => {
+        if(erro.status == 400 || erro.status == 500) {
+          console.log(erro);
+        }
+      }
+    );
+  }
 }
-
 
