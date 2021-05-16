@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+    <mat-label>Gênero</mat-label>
+    <mat-select required [formControl]="cadastro">
+      <mat-option *ngFor="let genero of generos" [value]="genero.value">
+        {{genero.value}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="cadastro.hasError('required')">Campo obrigatório</mat-error>
+</mat-form-field>

@@ -7,7 +7,6 @@ export class Usuario {
     senha: string = '';
 }
 
-export class Login {
-    email: string = '';
-    senha: string = '';
+export interface Generos {
+    value: string
 }

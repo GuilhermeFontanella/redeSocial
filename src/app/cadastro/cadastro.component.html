@@ -11,17 +11,17 @@
                 <mat-card-content>
                     <app-form-text nome="Sobrenome" controlName="sobrenome" [formGroup]="cadastro"></app-form-text>
                 </mat-card-content>
-                <mat-card-content>
-                    <app-form-text nome="Gênero" controlName="genero" [formGroup]="cadastro"></app-form-text>
+                <mat-card-content id="select">
+                    <app-form-select [formGroup]="cadastro" name="genero"></app-form-select>
+                </mat-card-content>
+                <mat-card-content id="datePicker">
+                    <app-date-picker-form [formGroup]="cadastro" name="dataNascimento"></app-date-picker-form>
                 </mat-card-content>
                 <mat-card-content>
-                    <app-form-text nome="Data de nascimento" controlName="dataNascimento" [formGroup]="cadastro"></app-form-text>
+                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro" name="usuario.email"></app-form-text>
                 </mat-card-content>
                 <mat-card-content>
-                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro" name="usario.email"></app-form-text>
-                </mat-card-content>
-                <mat-card-content>
-                    <app-form-text nome="Senha" controlName="senha" [formGroup]="cadastro" name="usario.senha"></app-form-text>
+                    <app-form-text tipo="password" nome="Senha" controlName="senha" [formGroup]="cadastro" name="usuario.senha"></app-form-text>
                 </mat-card-content>
                 <button 
                 type="submit" 

@@ -32,6 +32,9 @@ import { LojaComponent } from './loja/loja.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import { FormTextComponent } from './shared/form-text/form-text.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FormSelectComponent } from './shared/form-select/form-select.component';
+import { DatePickerFormComponent } from './date-picker-form/date-picker-form.component';
+import { FormPasswordComponent } from './form-password/form-password.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CadastroComponent,
     LojaComponent,
     FormTextComponent,
+    FormSelectComponent,
+    DatePickerFormComponent,
+    FormPasswordComponent,
   ],
   imports: [
     BrowserModule,

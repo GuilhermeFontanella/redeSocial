@@ -1,0 +1,10 @@
+<p>
+    <mat-form-field appearance="fill" >
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="dp3" required disabled="true">
+      <mat-datepicker-toggle matSuffix [for]="dp3" [formControl]="dataNascimento" required></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      <mat-error *ngIf="dataNascimento.hasError('required')">Campo obrigatório</mat-error>      
+    </mat-form-field>
+    
+</p>

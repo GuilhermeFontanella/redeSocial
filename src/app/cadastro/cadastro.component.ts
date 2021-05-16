@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidarCamposService } from '../shared/validar-campos.service';
-import { Login, Usuario } from '../models/usuario.model';
+import { Usuario } from '../models/usuario.model';
 import { CadastroService } from '../services/cadastro.service';
-import { Route } from '@angular/compiler/src/core';
-import { error } from '@angular/compiler/src/util';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -30,19 +29,20 @@ export class CadastroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private cadastroService: CadastroService,
-    private router: Router
+    private router: Router,
+    public validacao: ValidarCamposService
     ) { }
 
   ngOnInit(): void {
 
     this.cadastro = this.formBuilder.group({
-      nome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
-      sobrenome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(256)],
-      dataNascimento: ['', Validators.required],
-      genero: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      senha: ['', Validators.required, Validators.minLength(6), Validators.maxLength(15)]          
-    })    
+      nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
+      sobrenome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
+      dataNascimento: [''],
+      genero: [''],
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]          
+    })  
   }
 
   onSubmit() {

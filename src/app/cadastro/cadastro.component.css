@@ -42,5 +42,13 @@ button:last-child {
     margin-right: 0px;
 }
 
+#select {
+    margin-left: 15px;
+    text-align: left;
+}
+#datePicker {
+    margin-left: 15px;
+    text-align: left;
+}
 
 
