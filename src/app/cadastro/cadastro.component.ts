@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidarCamposService } from '../shared/validar-campos.service';
-import { Usuario } from '../models/usuario.model';
+import { Usuario, Generos } from '../models/usuario.model';
 import { CadastroService } from '../services/cadastro.service';
 
 
@@ -14,6 +14,7 @@ import { CadastroService } from '../services/cadastro.service';
 export class CadastroComponent implements OnInit {
 
   usuario: Usuario = {
+    id : 0,
     nome: '',
     sobrenome: '',
     dataNascimento: '',
@@ -22,36 +23,27 @@ export class CadastroComponent implements OnInit {
     senha: ''
   }
 
-  cadastro!: FormGroup;
+  generos: Generos[] = [
+    {value: 'Masculino'},
+    {value: 'Feminino'},
+    {value: 'Outro'},
+  ];
 
   matDatepicker = '';
 
   constructor(
-    private formBuilder: FormBuilder,
     private cadastroService: CadastroService,
     private router: Router,
     public validacao: ValidarCamposService
     ) { }
 
   ngOnInit(): void {
-
-    this.cadastro = this.formBuilder.group({
-      nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
-      sobrenome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
-      dataNascimento: [''],
-      genero: [''],
-      email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]          
-    })  
-  }
-
-  onSubmit() {
-    console.log(this.cadastro.value);
-    this.realizarCadastro();
+ 
   }
 
   realizarCadastro(): void {
     this.cadastroService.realizarCadastro(this.usuario).subscribe(() => {
+      console.log(this.usuario)
       this.cadastroService.showMessage("Usuário cadastrado com sucesso!")
       this.router.navigate(['/login'])
       }, erro => {

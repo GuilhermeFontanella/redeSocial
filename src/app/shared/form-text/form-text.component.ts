@@ -9,15 +9,15 @@ import { ValidarCamposService } from '../validar-campos.service';
 })
 export class FormTextComponent {
 
-  @Input() nome!: string;
-  @Input() formGroup!: FormGroup;
-  @Input() controlName!: string;
+  @Input() name!: string;
+  @Input() placeholder!: string;
   @Input() tipo!: string;
+  @Input() ngModel!: string;
   
-  constructor(public validacao: ValidarCamposService) { }
+  // constructor(public validacao: ValidarCamposService) { }
 
-  get formControl(): AbstractControl {
-    return this.formGroup.controls[this.controlName];
-  }
+  // get formControl(): AbstractControl {
+  //   return this.formGroup.controls[this.controlName];
+  // }
 
 }

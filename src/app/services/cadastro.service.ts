@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CadastroService {
 
-  baseUrl = "http://localhost:3001/usuarios";
+  baseUrl = "http://localhost:3000/usuarios";
 
   constructor(
     private http: HttpClient,
@@ -25,7 +25,7 @@ export class CadastroService {
   }
 
   realizarCadastro(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.baseUrl, usuario)
+    return this.http.post<Usuario>(this.baseUrl, usuario);
   }
 
   editarCadastro(usuario: Usuario): Observable<Usuario> {

@@ -14,9 +14,7 @@
     right: 150px;
 }
 form input, ::placeholder {
-    background-color: black;
     border: none;
-    color: azure;
     max-width: 800px;
     margin: auto;
 }
@@ -43,12 +41,11 @@ button:last-child {
 }
 
 #select {
-    margin-left: 15px;
     text-align: left;
 }
 #datePicker {
-    margin-left: 15px;
     text-align: left;
+    margin-bottom: -25px;
 }
 
 

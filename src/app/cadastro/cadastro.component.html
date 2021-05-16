@@ -3,26 +3,34 @@
         <div class="cadastro-title">
             <span>Cadastro</span>
         </div>
-        <div *ngIf="cadastro">
-            <form autocomplete="off" novalidate [formGroup]="cadastro">
-                <mat-card-content>
-                    <app-form-text nome="Nome" controlName="nome" [formGroup]="cadastro"></app-form-text>
-                </mat-card-content>    
-                <mat-card-content>
-                    <app-form-text nome="Sobrenome" controlName="sobrenome" [formGroup]="cadastro"></app-form-text>
-                </mat-card-content>
-                <mat-card-content id="select">
-                    <app-form-select [formGroup]="cadastro" name="genero"></app-form-select>
-                </mat-card-content>
-                <mat-card-content id="datePicker">
-                    <app-date-picker-form [formGroup]="cadastro" name="dataNascimento"></app-date-picker-form>
-                </mat-card-content>
-                <mat-card-content>
-                    <app-form-text nome="E-mail" controlName="email" [formGroup]="cadastro" name="usuario.email"></app-form-text>
-                </mat-card-content>
-                <mat-card-content>
-                    <app-form-text tipo="password" nome="Senha" controlName="senha" [formGroup]="cadastro" name="usuario.senha"></app-form-text>
-                </mat-card-content>
+        <div>
+            <form autocomplete="off" novalidate >
+                <mat-form-field>
+                    <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome" required>
+                </mat-form-field>   
+                <mat-form-field>
+                    <input matInput placeholder="Sobrenome" [(ngModel)]="usuario.sobrenome" name="sobrenome" required>
+                </mat-form-field>  
+                <mat-form-field appearance="fill">
+                    <mat-label>Gênero</mat-label>
+                    <mat-select required [(ngModel)]="usuario.genero" name="genero">
+                      <mat-option *ngFor="let genero of generos" [value]="genero.value">
+                        {{genero.value}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Data de nascimento</mat-label>
+                    <input matInput [matDatepicker]="dp3" required disabled="true" [(ngModel)]="usuario.dataNascimento" name="dataNascimento">
+                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                  </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="E-mail" [(ngModel)]="usuario.email" name="email" type="email" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" type="password" required minlength="3" maxlength="15">
+                </mat-form-field> 
                 <button 
                 type="submit" 
                 class="btn btn-primary"
