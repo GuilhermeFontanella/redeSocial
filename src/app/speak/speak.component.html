@@ -9,11 +9,11 @@
         </mat-card-content>
         <mat-card class="card-body">
             <div class="form-floating">
-                <textarea class="form-control" placeholder="No que você está pensando?" id="floatingTextarea"></textarea>
+                <textarea class="form-control" placeholder="No que você está pensando?" id="floatingTextarea" [(ngModel)]="post.conteudoPost"></textarea>
                 <label for="floatingTextarea">Posts</label>
             </div>
             <mat-card-actions>                
-                <button type="submit" title="Publicar post">
+                <button type="submit" title="Publicar post" (click)="teste()">
                     Enviar
                 </button> 
             </mat-card-actions>

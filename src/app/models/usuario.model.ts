@@ -6,6 +6,8 @@ export class Usuario {
     genero: string = '';
     email: string = '';
     senha: string = '';
+    fotoUsuario: string = '';
+    nomeUsuario: string = ''
 }
 
 export interface Generos {

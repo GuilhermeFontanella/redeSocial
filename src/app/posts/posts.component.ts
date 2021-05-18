@@ -17,8 +17,7 @@ export class PostsComponent implements OnInit {
     this.dialog.open(ProfileDialogComponent, {disableClose: false, hasBackdrop: true})
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
 

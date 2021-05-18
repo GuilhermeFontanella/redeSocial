@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PostsService } from '../services/posts.service';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-speak',
@@ -8,7 +10,18 @@ import { Router } from '@angular/router';
 })
 export class SpeakComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  post: Post =  {
+    idUsuario: 0,
+    nomeUsuario: '',
+    fotoUsuario: '',
+    dataPostagem: '',
+    conteudoPost: ''
+  }
+
+  constructor(
+    private router: Router,
+    private service: PostsService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +30,13 @@ export class SpeakComponent implements OnInit {
     this.router.navigate(['/profile']);
   }
 
+  criarPost() {
+    this.service.criarPost(this.post).subscribe(() => {
+      this.post.dataPostagem = new Date().toDateString();
+    })
+  }
+
+  teste() {
+    console.log(this.post.conteudoPost);
+  }
 }

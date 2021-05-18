@@ -1,37 +1,51 @@
 <app-speak></app-speak>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
-<app-posts></app-posts>
+<div class="cardpost container" *ngFor="let post of posts">
+    <mat-card class="post container" >
+        <mat-card-content class="title">
+            <img src="../../assets/logo/fotoPerfil.jpg" class="img-thumbnail" (click)="openDialog()">
+            <div class="header">
+                <a id="linkUsuario" routerLink="#" title="@autor_do_post">{{ post.nomeUsuario }}</a>
+            </div> 
+        </mat-card-content>
+        <div class="card-body">
+            <mat-card-content class="card-text">
+                {{ post.conteudoPost }}
+            </mat-card-content>
+            <mat-card-actions>
+                <button>
+                    <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Example home icon"
+                    title="Curtir"
+                    id="curtir"
+                    matBadge="5"
+                    matBadgePosition="before"
+                    >favorite
+                    </mat-icon>
+                </button>
+                <button>
+                    <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Example home icon"
+                    title="Comentar"
+                    id="comentar"
+                    matBadge="2"
+                    matBadgePosition="before"
+                    >question_answer
+                    </mat-icon> 
+                </button>
+                <button type="submit">
+                    <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Example home icon"
+                    title="Compartilhar"
+                    id="compartilhar"
+                    matBadge="1"
+                    matBadgePosition="before"
+                    >launch
+                    </mat-icon>
+                </button> 
+            </mat-card-actions>
+        </div> 
+    </mat-card>
+</div>

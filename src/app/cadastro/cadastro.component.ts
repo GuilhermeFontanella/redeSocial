@@ -20,7 +20,9 @@ export class CadastroComponent implements OnInit {
     dataNascimento: '',
     genero: '',
     email: '',
-    senha: ''
+    senha: '',
+    fotoUsuario: '',
+    nomeUsuario: ''
   }
 
   generos: Generos[] = [
