@@ -1,14 +1,14 @@
-<div class="cardpost container">
+<div class="cardpost container" *ngFor="let e of post">
     <mat-card class="post container">
         <mat-card-content class="title">
             <img src="../../assets/logo/fotoPerfil.jpg" class="img-thumbnail" (click)="openDialog()">
             <div class="header">
-                <a id="linkUsuario" routerLink="#" title="@autor_do_post">@autor_do_post</a>
+                <a id="linkUsuario" routerLink="#" title="@autor_do_post">{{e.usuario}}</a>
             </div> 
         </mat-card-content>
-        <div class="card-body">
+        <div class="card-body" >
             <mat-card-content class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {{ e.conteudo }}
             </mat-card-content>
             <mat-card-actions>
                 <button>
@@ -48,4 +48,4 @@
         </div> 
     </mat-card>
 </div>
-
+ 

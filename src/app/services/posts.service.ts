@@ -16,7 +16,11 @@ export class PostsService {
     return this.http.post<Post>(this.baseUrl, post);
   }
 
-  retornarPost(): Observable<Post[]> {
+  retornarPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.baseUrl)
+  }
+
+  retornarPost(): Observable<Post> {
+    return this.http.get<Post>(this.baseUrl)
   }
 }

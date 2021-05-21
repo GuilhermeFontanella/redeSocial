@@ -11,13 +11,9 @@ import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.compone
 })
 export class FeedComponent implements OnInit {
 
-  posts!: Post[];
-
-  idUsuario = 0;
-  nomeUsuario = '';
-  fotoUsuario = '';
-  dataPostagem = '';
-  conteudoPost = '';
+  posts: Post[] = []
+  postAutor!: string;
+  postConteudo!: string;
 
   constructor(
     private service: PostsService,
@@ -26,13 +22,29 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscarListaDePosts();
-    console.log(this.posts)
+    this.defineConteudoDePosts();
   }
 
-  buscarListaDePosts(): void {
-    this.service.retornarPost().subscribe(posts => {
-      this.posts = posts;
-      console.log(posts)
+  buscarListaDePosts() {
+    this.service.retornarPosts().subscribe(result => {
+      this.posts = result;
+      console.log(this.posts)
+    })
+  }
+
+  defineConteudoDePosts() {
+    this.service.retornarPosts().subscribe(result => {
+      this.posts = result;
+      this.posts.forEach(result => {
+        this.postConteudo = result.conteudo
+        console.log(this.postConteudo)
+      })
+      console.log(this.posts)
+    })
+  }
+  defineFotoDePerfilDePosts() {
+    this.service.retornarPosts().subscribe(result => {
+      console.log(result.forEach(result => console.log(result)));
     })
   }
 
@@ -40,5 +52,5 @@ export class FeedComponent implements OnInit {
     this.dialog.open(ProfileDialogComponent, {disableClose: false, hasBackdrop: true})
   }
 
-
+ 
 }

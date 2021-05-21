@@ -12,10 +12,10 @@ export class SpeakComponent implements OnInit {
 
   post: Post =  {
     idUsuario: 0,
-    nomeUsuario: '',
-    fotoUsuario: '',
+    usuario: '',
+    foto: '',
     dataPostagem: '',
-    conteudoPost: ''
+    conteudo: ''
   }
 
   constructor(
@@ -37,6 +37,6 @@ export class SpeakComponent implements OnInit {
   }
 
   teste() {
-    console.log(this.post.conteudoPost);
+    console.log(this.post.conteudo);
   }
 }
