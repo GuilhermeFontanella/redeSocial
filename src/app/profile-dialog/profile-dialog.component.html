@@ -1,5 +1,28 @@
 <mat-dialog-content class="mat-typography">
-  <app-profile></app-profile>
+  <div class="card-profile">
+    <h1>@nome_do_usuario</h1>
+    <mat-card-content>
+        <div class="img-thumbnail" style="width: fit-content;">
+            <img src="../../assets/logo/fotoPerfil.jpg" style="height: 200px; width: 200px;">
+        </div>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon>perm_identity</mat-icon>
+                @nome_do_usuario
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <mat-icon>email</mat-icon>
+                usuario@email.com
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <mat-icon>location_on</mat-icon>
+                Paris/Fr
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button

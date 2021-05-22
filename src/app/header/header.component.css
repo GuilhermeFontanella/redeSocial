@@ -7,4 +7,5 @@
 }
 .navbar .nav-link {
   color: aliceblue;
+  cursor: pointer;
 }

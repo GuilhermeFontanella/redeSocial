@@ -4,11 +4,11 @@
     justify-content: center;
     text-align: center;
     margin: auto;
+    
 }
 .img-thumbnail {
     margin: auto;
 }
 mat-icon {
     margin-right: 10px;
-
 }

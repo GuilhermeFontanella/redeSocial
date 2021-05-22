@@ -32,4 +32,8 @@ export class CadastroService {
     return this.http.put<Usuario>(this.baseUrl, usuario);
   }
 
+  login(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(this.baseUrl);
+  }
+
 }

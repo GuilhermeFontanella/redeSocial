@@ -15,6 +15,7 @@ export class PostsComponent implements OnInit {
   post: Post[] = [];
   postAutor!: string;
   postConteudo!: any;
+  teste = 'guilherme'
 
   constructor(
     public dialog: MatDialog,
