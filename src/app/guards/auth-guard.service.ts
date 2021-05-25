@@ -11,12 +11,6 @@ export class AuthGuardService implements CanActivate {
 
   canActivate() {
     return this.isAuthenticated;
-  }
-
-  canDeactivate() {
-    return this.isAuthenticated;
-  }
-
-  
+  } 
   
 }

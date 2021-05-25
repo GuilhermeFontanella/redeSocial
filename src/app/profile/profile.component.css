@@ -10,5 +10,10 @@
     margin: auto;
 }
 mat-icon {
-    margin-right: 10px;
+    
+}
+
+.posicao-icone {
+    display: flex;
+    flex-direction: row;
 }

@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   { 
     path: 'home', 
-    canActivate: [AuthGuardService],
+    //canActivate: [AuthGuardService],
     component: HomeComponent 
   },
   { 

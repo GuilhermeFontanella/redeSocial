@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if(this.email && this.senha) {
-      this.auth.canActivate();
+      //this.auth.canActivate();
       this.router.navigate(['/home']);
     } else {
       console.error('Erro no sistema');

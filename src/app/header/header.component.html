@@ -6,7 +6,7 @@
       <a class="nav-link" routerLink="loja">Loja</a>
       <a class="nav-link" routerLink="comunidade">Comunidade</a>
       <a class="nav-link" *ngIf="estaLogado" routerLink="login" tabindex="-1">Login</a>
-      <a class="nav-link" *ngIf="!estaLogado" (click)="logout()" tabindex="-1">Logof</a>
+      <a class="nav-link"  (click)="logout()" tabindex="-1">Logof</a>
     </div>
   </div>
 </nav>

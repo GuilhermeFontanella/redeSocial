@@ -43,9 +43,11 @@ export class CadastroComponent implements OnInit {
  
   }
 
+  ngOnDestroy() {}
+
   realizarCadastro(): void {
     this.cadastroService.realizarCadastro(this.usuario).subscribe(() => {
-      console.log(this.usuario)
+      
       this.cadastroService.showMessage("Usuário cadastrado com sucesso!")
       this.router.navigate(['/login'])
       }, erro => {

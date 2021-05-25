@@ -1,24 +1,35 @@
 <div class="container" style="height: calc(100vh - 52px)">
     <div class="card-profile">
-        <h1>@nome_do_usuario</h1>
+        <div class="posicao-icone">
+            <h1 class="col-11">@nome_do_usuario</h1>
+            <div>
+                <mat-icon class="col-1" style="margin-top: 5px;">mode_edit_outline</mat-icon>
+            </div>
+        </div>
         <mat-card-content>
             <div class="img-thumbnail" style="width: fit-content;">
                 <img src="../../assets/logo/fotoPerfil.jpg" style="height: 200px; width: 200px;">
+                <div>
+                    <mat-icon>mode_edit_outline</mat-icon>
+                </div>
             </div>
             <mat-list>
-                <mat-list-item>
-                    <mat-icon>perm_identity</mat-icon>
-                    @nome_do_usuario
+                <mat-list-item class="posicao-icone">
+                    <mat-icon class="col-1">perm_identity</mat-icon>
+                    <span class="col-10">@nome_do_usuario</span>
+                    <mat-icon class="col-1">mode_edit_outline</mat-icon>
                 </mat-list-item>
                 <mat-divider></mat-divider>
-                <mat-list-item>
-                    <mat-icon>email</mat-icon>
-                    usuario@email.com
+                <mat-list-item class="posicao-icone">
+                    <mat-icon class="col-1">email</mat-icon>
+                    <span class="col-10">usuario@email.com</span>
+                    <mat-icon class="col-1">mode_edit_outline</mat-icon>
                 </mat-list-item>
                 <mat-divider></mat-divider>
-                <mat-list-item>
-                    <mat-icon>location_on</mat-icon>
-                    Paris/Fr
+                <mat-list-item posicao-icone>
+                    <mat-icon class="col-1">location_on</mat-icon>
+                    <span class="col-10">Paris/Fr</span>
+                    <mat-icon class="col-1">mode_edit_outline</mat-icon>
                 </mat-list-item>
             </mat-list>
         </mat-card-content>

@@ -42,11 +42,6 @@ export class FeedComponent implements OnInit {
       console.log(this.posts)
     })
   }
-  defineFotoDePerfilDePosts() {
-    this.service.retornarPosts().subscribe(result => {
-      console.log(result.forEach(result => console.log(result)));
-    })
-  }
 
   openDialog() {
     this.dialog.open(ProfileDialogComponent, {disableClose: false, hasBackdrop: true})
