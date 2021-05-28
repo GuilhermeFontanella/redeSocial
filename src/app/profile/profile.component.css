@@ -9,11 +9,57 @@
 .img-thumbnail {
     margin: auto;
 }
-mat-icon {
-    
+.profile-page {
+    padding: 50px;
+    width: 35rem;
+    background-color: greenyellow;
+    border-radius: 5px;  
 }
 
 .posicao-icone {
     display: flex;
     flex-direction: row;
+}
+
+.img-thumbnail {
+    box-shadow: 0px 0px 10px black;
+}
+.img-thumbnail mat-icon {
+    margin-top: 10px;
+}
+
+.nomeUsuarioInput {
+    background-color: greenyellow;
+    border: none;
+    text-align: center;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    text-shadow: none;
+    font-size: 18px;
+    padding-left: 50px;
+}
+
+.nomeUsuario {
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit {
+    cursor: pointer;
+}
+.icones div {
+    display: flex;
+    flex-direction: row;
+}
+.usuarioInput {
+    margin-left: 5px;
+    text-align: center;
+    background-color: greenyellow;
+    border: none;
+    color: black;
+}
+.back {
+    cursor: pointer;
 }
