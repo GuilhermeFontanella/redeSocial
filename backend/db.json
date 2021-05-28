@@ -10,6 +10,72 @@
       "senha": "teste123",
       "nome-usuario": "@fulano_de_tal",
       "foto-perfil": "fulano.jpg"
+    },
+    {
+      "id": 1,
+      "nome": "marcela",
+      "sobrenome": "junqueira",
+      "dataNascimento": "2021-05-20T03:00:00.000Z",
+      "genero": "Feminino",
+      "email": "marcelajunjun@hotmail.com",
+      "senha": "corcovado15",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
+    },
+    {
+      "id": 2,
+      "nome": "teste",
+      "sobrenome": "teste",
+      "dataNascimento": "2021-05-03T03:00:00.000Z",
+      "genero": "Masculino",
+      "email": "gui.jmf@hotmail.com",
+      "senha": "teste123",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
+    },
+    {
+      "id": 3,
+      "nome": "teste",
+      "sobrenome": "teste",
+      "dataNascimento": "2021-05-03T03:00:00.000Z",
+      "genero": "Masculino",
+      "email": "gui.jmf@hotmail.com",
+      "senha": "teste123",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
+    },
+    {
+      "id": 4,
+      "nome": "teste",
+      "sobrenome": "teste",
+      "dataNascimento": "2021-05-03T03:00:00.000Z",
+      "genero": "Masculino",
+      "email": "bileco@bileco.com",
+      "senha": "teste123",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
+    },
+    {
+      "id": 5,
+      "nome": "teste",
+      "sobrenome": "teste",
+      "dataNascimento": "2021-05-03T03:00:00.000Z",
+      "genero": "Masculino",
+      "email": "bileco@bileco.com",
+      "senha": "teste123",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
+    },
+    {
+      "id": 6,
+      "nome": "a ultima",
+      "sobrenome": "tentativa",
+      "dataNascimento": "2021-05-24T03:00:00.000Z",
+      "genero": "Masculino",
+      "email": "porra@viado.com",
+      "senha": "caralho",
+      "fotoUsuario": "",
+      "nomeUsuario": ""
     }
   ],
   "posts": [
@@ -25,7 +91,7 @@
       "usuario": "@burrao",
       "foto": "fulano.jpg",
       "data-postagem": "12-05-2021 21:00:00 GMT-0300",
-      "conteudo": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000."
+      "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. SAUIHDISAUHIAUSFHFSIADUHFASIDUHDSFAIUHDSFAIUDSH  UDSHIFUDHFIAUSDHFDSIU FDUISHFDSIUHDFSUISDHAUISDAH"
     },
     {
       "id-usuario": "3",
@@ -33,6 +99,12 @@
       "foto": "fulano.jpg",
       "data-postagem": "17-05-2021 10:00:00 GMT-0300",
       "conteudo": "SAUIHDISAUHIAUSFHFSIADUHFASIDUHDSFAIUHDSFAIUDSH  UDSHIFUDHFIAUSDHFDSIU FDUISHFDSIUHDFSUISDHAUISDAH DSUAIH DSFIU HDFSIUFDHS IUDFSHSAIUHASIUHDSAFU IDSFIUHDFSUIDSHAISUADFHDFSIUHDFSIUFDHS."
+    }
+  ],
+  "login": [
+    {
+      "email": "",
+      "senha": ""
     }
   ]
 }
