@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AuthGuardService } from '../guards/auth-guard.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
   estaLogado: boolean = false;
 
   constructor(
@@ -19,17 +19,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.estadoLogado();
-    
-    
     console.log(this.estaLogado);
   }
 
+  ngOnChanges(): void {
+
+  }
+
   estadoLogado() {
-    if(window.localStorage.getItem('id')?.toString()) {
-      return this.estaLogado = true;
+    if(window.localStorage.getItem('id')) {
+      this.estaLogado = true;
+      return true;
     } else {
-      console.log(this.estaLogado);
-      return this.estaLogado = false;
+      this.estaLogado = false;
+      return false;
     }
   }
 
