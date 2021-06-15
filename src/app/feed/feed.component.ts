@@ -28,7 +28,7 @@ export class FeedComponent implements OnInit {
   buscarListaDePosts() {
     this.service.retornarPosts().subscribe(result => {
       this.posts = result;
-      console.log(this.posts)
+      //console.log(this.posts)
     })
   }
 
@@ -37,9 +37,9 @@ export class FeedComponent implements OnInit {
       this.posts = result;
       this.posts.forEach(result => {
         this.postConteudo = result.conteudo
-        console.log(this.postConteudo)
+        //console.log(this.postConteudo)
       })
-      console.log(this.posts)
+      //console.log(this.posts)
     })
   }
 

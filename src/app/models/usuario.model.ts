@@ -13,3 +13,14 @@ export class Usuario {
 export interface Generos {
     value: string
 }
+
+export interface UsuarioLogado {
+    id: number;
+    nome: string;
+    sobrenome: string;
+    dataNascimento: string;
+    genero: string;
+    email: string;
+    nomeUsuario: string;
+    fotoPerfil: string
+}

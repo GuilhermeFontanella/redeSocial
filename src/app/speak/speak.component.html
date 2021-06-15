@@ -2,18 +2,18 @@
     <mat-card class="post container">
         <mat-card-content class="title">
             <div class="header">
-                <a id="linkUsuario" (click)="irParaProfile()" title="@autor_do_post">
+                <a id="linkUsuario" (click)="irParaProfile()" [title]="nomeUsuario">
                     <img src="../../assets/logo/fotoPerfil.jpg" class="img-thumbnail">
                 </a>
             </div> 
         </mat-card-content>
         <mat-card class="card-body">
             <div class="form-floating">
-                <textarea class="form-control" placeholder="No que você está pensando?" id="floatingTextarea" [(ngModel)]="post.conteudo"></textarea>
+                <textarea class="form-control" placeholder="No que você está pensando?" id="floatingTextarea" [(ngModel)]="post.conteudo" name="post"></textarea>
                 <label for="floatingTextarea">Posts</label>
             </div>
             <mat-card-actions>                
-                <button type="submit" title="Publicar post" (click)="teste()">
+                <button title="Publicar post" (click)="criarPost()">
                     Enviar
                 </button> 
             </mat-card-actions>

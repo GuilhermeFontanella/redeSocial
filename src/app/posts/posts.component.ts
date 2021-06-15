@@ -13,16 +13,14 @@ import { Input } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   post: Post[] = [];
-  postAutor!: string;
-  postConteudo!: any;
-  teste = 'guilherme'
+  postAutor: string = 'guiFontanella';
+  postConteudo: any;
+  
 
   constructor(
     public dialog: MatDialog,
     private service: PostsService
   ) { }
-
-  
 
   openDialog() {
     this.dialog.open(ProfileDialogComponent, {disableClose: false, hasBackdrop: true})
@@ -30,7 +28,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscarListaDePosts();
-    console.log(this.postConteudo)
+   // console.log(this.postConteudo)
   }
 
   buscarListaDePosts(): void {

@@ -1,65 +1,52 @@
-.card-profile {
-    max-width: fit-content;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    
-}
-.img-thumbnail {
-    margin: auto;
+.container {
+    display: grid;
 }
 .profile-page {
     padding: 50px;
     width: 35rem;
-    background-color: greenyellow;
     border-radius: 5px;  
+    margin: auto;
 }
 
-.posicao-icone {
+.card-profile {
+    background-color: greenyellow;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 10px 20px black;
+}
+form {
+    display: flex;
+    font-size: 20px;
+    display: block;
+}
+
+.userInfo {
     display: flex;
     flex-direction: row;
 }
 
-.img-thumbnail {
-    box-shadow: 0px 0px 10px black;
-}
-.img-thumbnail mat-icon {
-    margin-top: 10px;
+.foto {
+    margin: auto;
+    width: fit-content;
 }
 
-.nomeUsuarioInput {
-    background-color: greenyellow;
-    border: none;
-    text-align: center;
-    width: 100%;
-    color: black;
+input {
     font-weight: bold;
-    text-shadow: none;
-    font-size: 18px;
-    padding-left: 50px;
+    text-align: center;
 }
-
-.nomeUsuario {
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
+input:disabled {
+    color: black;
+    font-weight: bold;  
 }
-
 .edit {
     cursor: pointer;
 }
-.icones div {
-    display: flex;
-    flex-direction: row;
-}
-.usuarioInput {
-    margin-left: 5px;
-    text-align: center;
-    background-color: greenyellow;
-    border: none;
-    color: black;
-}
-.back {
-    cursor: pointer;
+mat-icon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    left: -30px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }

@@ -36,6 +36,7 @@ import { FormSelectComponent } from './shared/form-select/form-select.component'
 import { DatePickerFormComponent } from './date-picker-form/date-picker-form.component';
 import { FormPasswordComponent } from './form-password/form-password.component';
 import {MatTableModule} from '@angular/material/table';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {MatTableModule} from '@angular/material/table';
     FormSelectComponent,
     DatePickerFormComponent,
     FormPasswordComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,7 @@ import {MatTableModule} from '@angular/material/table';
     A11yModule,
     MatInputModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [
     MatDatepickerModule,

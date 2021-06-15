@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostsService } from '../services/posts.service';
 import { Post } from '../models/post.model';
+import { CadastroService } from '../services/cadastro.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-speak',
@@ -10,9 +12,11 @@ import { Post } from '../models/post.model';
 })
 export class SpeakComponent implements OnInit {
 
+  nomeUsuario : string | null = window.localStorage.getItem('nomeUsuario');
+
   post: Post =  {
-    idUsuario: 0,
-    usuario: '',
+    idUsuario: 10,
+    usuario: 'guiFontanella',
     foto: '',
     dataPostagem: '',
     conteudo: ''
@@ -20,10 +24,19 @@ export class SpeakComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: PostsService
+    private service: PostsService,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
+  }
+
+  showMessage(msg: string): void {
+    this.snackBar.open(msg, 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
   }
 
   irParaProfile() {
@@ -32,7 +45,10 @@ export class SpeakComponent implements OnInit {
 
   criarPost() {
     this.service.criarPost(this.post).subscribe(() => {
-      this.post.dataPostagem = new Date().toDateString();
+      this.post.dataPostagem = new Date().getDate().toString();
+      this.post.conteudo = this.post.conteudo;
+      this.router.navigate(['/home']);
+      console.log("postou");
     })
   }
 

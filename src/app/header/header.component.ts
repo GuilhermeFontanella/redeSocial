@@ -18,21 +18,35 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.estadoLogado()
+    this.estadoLogado();
+    
+    
+    console.log(this.estaLogado);
   }
 
   estadoLogado() {
-    if(!this.auth.isAuthenticated) {
-      console.log(this.estaLogado)
+    if(window.localStorage.getItem('id')?.toString()) {
       return this.estaLogado = true;
     } else {
+      console.log(this.estaLogado);
       return this.estaLogado = false;
     }
   }
 
   logout() {
-    //this.estaLogado = false;
+    this.removeSessionStorage();
     this.router.navigate(['/login']);
+  }
+
+  removeSessionStorage() {
+    window.localStorage.removeItem('nome');
+    window.localStorage.removeItem('id');
+    window.localStorage.removeItem('sobrenome');
+    window.localStorage.removeItem('dataNascimento');
+    window.localStorage.removeItem('genero');
+    window.localStorage.removeItem('email'); 
+    window.localStorage.removeItem('nomeUsuario');
+    window.localStorage.removeItem('fotoPerfil');
   }
 
 }

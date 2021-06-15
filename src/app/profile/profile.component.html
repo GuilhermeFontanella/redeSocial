@@ -1,43 +1,51 @@
-<div class="container profile-page" style="height: calc(100vh - 52px)">
-    <div class="card-profile">
-        <div class="col-1 back">
-            <mat-icon title="Voltar" (click)="voltar()">keyboard_backspace</mat-icon>
-        </div>
-        <div class="posicao-icone nomeUsuario">
-            <input class="nomeUsuarioInput col-11" #nome type="text" [disabled]="disabled" [(ngModel)]="nomeDoUsuario">
-            <div class="icones">
-                <mat-icon class="col edit" style="margin-top: 5px;" title="Editar" (click)="editar(1)" *ngIf="disabled">mode_edit_outline</mat-icon>
-                <mat-icon class="col edit" title="Ok" *ngIf="!disabled" (click)="ok()">done</mat-icon>
-            </div>
-        </div>
-        <mat-card-content>
-            <div class="img-thumbnail" style="width: fit-content;">
-                <img src="../../assets/logo/fotoPerfil.jpg" style="height: 200px; width: 200px;">
-                <div>
-                    <mat-icon class="col edit" style="margin-top: 5px;" title="Editar" *ngIf="disabled">mode_edit_outline</mat-icon>
-                    <mat-icon class="col edit" title="Ok" *ngIf="!disabled" (click)="ok()">done</mat-icon>
+<div class="profile-page">
+    <mat-card class="card-profile container">
+        <div class="col-sm profile">
+            <form>
+                <div class="userInfo">
+                    <mat-form-field class="col-sm-10" style="margin-left: 30px;">
+                        <input matInput name="nomeUsuario" [disabled]=disabled [(ngModel)]="nomeDoUsuario" #nome>
+                    </mat-form-field>
+                    <div class="edit col col-sm-2">
+                        <mat-icon (click)="editar(1, nome)" *ngIf="disabled" title="Editar">edit</mat-icon>
+                        <mat-icon (click)="ok(1, nomeDoUsuario)" *ngIf="!disabled" title="Concluir">done</mat-icon>
+                    </div>
                 </div>
-            </div>
-            <mat-list>
-                <mat-list-item class="posicao-icone">
-                    <mat-icon class="col-1">perm_identity</mat-icon>
-                    <input matInput class="usuarioInput col-10" type="text" disabled [(ngModel)]="nomeDoUsuario">
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item class="posicao-icone">
-                    <mat-icon class="col-1" title="Editar">email</mat-icon>
-                    <input matInput class="usuarioInput col-10" #email type="text" [disabled]="disabled" [(ngModel)]="emailUsuario">
-                    <mat-icon class="col edit" style="margin-top: 5px;" title="Editar" (click)="editar(2)" *ngIf="disabled">mode_edit_outline</mat-icon>
-                    <mat-icon class="col edit" title="Ok" *ngIf="!disabled" (click)="ok()">done</mat-icon>
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item posicao-icone>
-                    <mat-icon class="col-1 edit" title="Editar">location_on</mat-icon>
-                    <input matInput class="usuarioInput col-10" #local type="text" [disabled]="disabled" [(ngModel)]="localUsuario">
-                    <mat-icon class="col edit" style="margin-top: 5px;" title="Editar" (click)="editar(3)" *ngIf="disabled">mode_edit_outline</mat-icon>
-                    <mat-icon class="col edit" title="Ok" *ngIf="!disabled" (click)="ok()">done</mat-icon>
-                </mat-list-item>
-            </mat-list>
-        </mat-card-content>
-    </div>
+                <div class="fotoUsuario foto">
+                    <mat-card class="col">
+                        <mat-card-content >
+                           <img src="../../assets/logo/fotoPerfil.jpg" alt="Sem foto"> 
+                        </mat-card-content>
+                        <!-- <div class="iconeFoto col">
+                            <mat-icon title="Editar">edit</mat-icon>
+                            <mat-icon title="Concluir">done</mat-icon>
+                        </div> -->
+                    </mat-card>
+                </div>
+                <div class="userInfo">
+                    <mat-icon class="icone">email</mat-icon>
+                    <mat-form-field class="col-sm-10">
+                        <input matInput name="emailUsuario" [disabled]=disabled [(ngModel)]="emailUsuario" #email>
+                    </mat-form-field>
+                    <div class="edit col col-sm-2">
+                        <mat-icon (click)="editar(2, email)" *ngIf="disabled" title="Editar">edit</mat-icon>
+                        <mat-icon (click)="ok(2, emailUsuario)" *ngIf="!disabled" title="Concluir">done</mat-icon>
+                    </div>
+                </div>
+                <div class="userInfo">
+                    <mat-icon class="icone">location_on</mat-icon>
+                    <mat-form-field class="col-sm-10">
+                        <input matInput name="localUsuario" [disabled]=disabled [(ngModel)]="localUsuario" #local>
+                    </mat-form-field>
+                    <div class="edit col col-sm-2">
+                        <mat-icon (click)="editar(3, local)" *ngIf="disabled" title="Editar">edit</mat-icon>
+                        <mat-icon (click)="ok(3, localUsuario)" *ngIf="!disabled" title="Concluir">done</mat-icon>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        
+    </mat-card>
+
 </div>

@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { MatInput } from '@angular/material/input';
 import { CadastroService } from '../services/cadastro.service';
 
 @Component({
@@ -8,14 +9,16 @@ import { CadastroService } from '../services/cadastro.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  @ViewChild("nome") nome!: ElementRef;
+  @ViewChild("nome", {read: ElementRef }) nome!: ElementRef;
+  @ViewChild("foto", {read: ElementRef }) foto!: ElementRef;
   @ViewChild("email") email!: ElementRef;
   @ViewChild("local") local!: ElementRef;
   @Input() disabled: boolean = true;
 
-  nomeDoUsuario: string = 'fulano_de_tal';
-  localUsuario: string = 'Paris FR';
-  emailUsuario: string = 'usuario@email.com'
+  nomeDoUsuario: string | null = '';
+  localUsuario: string | null = 'Paris FR';
+  emailUsuario: string | null = ''
+  fotoUsuario: string | null = '';
 
   constructor(
     private service: CadastroService,
@@ -23,41 +26,28 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getUsuario()
   }
 
-  getUsuario(idUsuario: number) {
-    
+  getUsuario() {
+    this.nomeDoUsuario = window.localStorage.getItem('nomeUsuario');
+    this.emailUsuario = window.localStorage.getItem('email'); 
+    window.localStorage.getItem('fotoPerfil');
   }
 
-  editar(a: number) {
-    this.disabled = false;
-    if(a == 1) {
-      console.log("clicou em " + a)
-      setTimeout(() => {
-      this.nome.nativeElement.focus();
-    }, 100);
+  ok(a: number, infoAtual: string | null) {
+    if(infoAtual) {
+      this.nomeDoUsuario = infoAtual;
+      this.service.showMessage("Informações alteradas com sucesso!");
     }
-    if (a == 2) {
-      console.log("clicou em " + a)
-      setTimeout(() => {
-        this.email.nativeElement.focus();
-      }, 100);
-    }
-    if (a == 3) {
-      console.log("clicou em " + a)
-      setTimeout(() => {
-        this.local.nativeElement.focus();
-      }, 100);
-    }    
+      
+    return this.disabled = true;
   }
 
-  ok() {
-    console.log("editou o nome");
-    this.disabled = true;
-    alert("Alteração feita com sucesso!")
+  editar(a: number, id: HTMLInputElement) {
+    setTimeout(() => {
+      id.focus();
+    }, 200);
+    return this.disabled = false;
   }
-  voltar() {
-    this._location.back();
-  }
-
 }
