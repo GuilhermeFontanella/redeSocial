@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
       this.service.getLogin().subscribe((result) => {
         this.loginUsuario = result.filter(x => x.email === usuario);
         this.user = this.loginUsuario[0];
-        console.log(this.user.nomeUsuario);
 
         this.nome = this.user.nome;
         this.id = this.user.id; 
@@ -53,8 +52,6 @@ export class LoginComponent implements OnInit {
         this.email = this.user.email;
         this.nomeUsuario = this.user.nomeUsuario;
         this.fotoPerfil = this.user.fotoPerfil;
-        
-        this.setSessionStorage();
         return this.user;
       })
       this.router.navigate(['/home']);

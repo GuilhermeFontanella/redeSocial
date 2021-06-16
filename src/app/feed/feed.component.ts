@@ -22,13 +22,14 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscarListaDePosts();
-    this.defineConteudoDePosts();
+    this.defineConteudoDePosts();        
   }
 
   buscarListaDePosts() {
     this.service.retornarPosts().subscribe(result => {
       this.posts = result;
-      //console.log(this.posts)
+      console.log(this.posts);
+      return this.posts;
     })
   }
 
@@ -36,7 +37,10 @@ export class FeedComponent implements OnInit {
     this.service.retornarPosts().subscribe(result => {
       this.posts = result;
       this.posts.forEach(result => {
-        this.postConteudo = result.conteudo
+        this.postConteudo = result.conteudo;
+        
+        this.postAutor = result.usuario
+        console.log(this.postAutor);
         //console.log(this.postConteudo)
       })
       //console.log(this.posts)

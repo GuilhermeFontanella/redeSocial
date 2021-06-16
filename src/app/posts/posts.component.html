@@ -1,9 +1,9 @@
 <div class="cardpost container" *ngFor="let e of post">
     <mat-card class="post container">
-        <mat-card-content class="title">
-            <img src="../../assets/logo/fotoPerfil.jpg" class="img-thumbnail" (click)="openDialog()">
+        <mat-card-content class="title" (click)="openDialog(e)">
+            <img src="../../assets/logo/fotoPerfil.jpg" class="img-thumbnail" >
             <div class="header">
-                <a id="linkUsuario" routerLink="#" title="@autor_do_post">{{e.usuario}}</a>
+                <a id="linkUsuario" routerLink="#" [title]="e.usuario">{{e.usuario}}</a>
             </div> 
         </mat-card-content>
         <div class="card-body" >
@@ -48,4 +48,3 @@
         </div> 
     </mat-card>
 </div>
- 

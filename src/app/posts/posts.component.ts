@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.component';
 import { Post } from '../models/post.model';
@@ -11,36 +11,24 @@ import { Input } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  @ViewChild("modalPerfil", {static: false})
+  modalPerfil?: ProfileDialogComponent;
 
-  post: Post[] = [];
-  postAutor: string = 'guiFontanella';
-  postConteudo: any;
+  @Input() autor: any;
+  @Input() conteudo: any;
+  @Input() post: Post[] = [];
+
+  data: any;
+
+  constructor(public dialog: MatDialog) { }
   
+  ngOnInit(): void {       
+  }
 
-  constructor(
-    public dialog: MatDialog,
-    private service: PostsService
-  ) { }
-
-  openDialog() {
+  openDialog(data: any): void {
+    this.data = {post: data};
     this.dialog.open(ProfileDialogComponent, {disableClose: false, hasBackdrop: true})
-  }
-
-  ngOnInit(): void {
-    this.buscarListaDePosts();
-   // console.log(this.postConteudo)
-  }
-
-  buscarListaDePosts(): void {
-    this.service.retornarPosts().subscribe(post => {
-      this.post = post;         
-    })
-  }
-
-  defineConteudoDePosts() {
-    this.service.retornarPosts().subscribe(result => {
-      this.postConteudo = result.forEach(result => result.conteudo)
-    })
+    //console.log(this.data);
   }
 }
 
